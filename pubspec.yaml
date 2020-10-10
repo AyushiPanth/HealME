@@ -26,7 +26,8 @@ dependencies:
   flutter_svg: ^0.18.0
   google_fonts: ^0.3.2
   material_design_icons_flutter: 4.0.5655
-
+  audioplayer: ^0.8.1
+  volume: ^1.0.1  
 
 
   # The following adds the Cupertino Icons font to your application.

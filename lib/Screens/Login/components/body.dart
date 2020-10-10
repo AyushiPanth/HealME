@@ -5,7 +5,6 @@ import 'package:healme/components/already_have_an_account_acheck.dart';
 import 'package:healme/components/rounded_button.dart';
 import 'package:healme/components/rounded_input_field.dart';
 import 'package:healme/components/rounded_password_field.dart';
-import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -22,13 +21,11 @@ class Body extends StatelessWidget {
           children: <Widget>[
             Text(
               "Login",
-              style: TextStyle(
-                  fontSize: 25,
-                fontFamily: 'Sketch'
-              ),
+              style: TextStyle(fontSize: 25, fontFamily: 'Sketch'),
             ),
             SizedBox(height: size.height * 0.03),
-            Image.asset("assets/icons/login.png",
+            Image.asset(
+              "assets/icons/login.png",
               height: size.height * 0.45,
               width: size.width * 0.85,
             ),

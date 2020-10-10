@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:healme/Screens/Login/login_screen.dart';
@@ -10,8 +8,6 @@ import 'package:healme/components/already_have_an_account_acheck.dart';
 import 'package:healme/components/rounded_button.dart';
 import 'package:healme/components/rounded_input_field.dart';
 import 'package:healme/components/rounded_password_field.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:healme/constants.dart';
 
 class Body extends StatefulWidget {
@@ -20,7 +16,6 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-
   var _pageState = 0;
   double _profileOffset = 0;
 
@@ -46,12 +41,10 @@ class _BodyState extends State<Body> {
                 SizedBox(height: size.height * 0.03),
                 Text(
                   "Sign up",
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontFamily: 'Sketch'
-                  ),
+                  style: TextStyle(fontSize: 25, fontFamily: 'Sketch'),
                 ),
-                Image.asset("assets/icons/signup.png",
+                Image.asset(
+                  "assets/icons/signup.png",
                   height: size.height * 0.45,
                   width: size.width * 0.85,
                 ),
@@ -67,7 +60,7 @@ class _BodyState extends State<Body> {
                   press: () {
                     setState(() {
                       _pageState = 1;
-                      });
+                    });
                   },
                 ),
                 SizedBox(height: size.height * 0.01),
@@ -111,8 +104,7 @@ class _BodyState extends State<Body> {
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(30),
                 topRight: Radius.circular(30),
-              )
-          ),
+              )),
           child: Column(
             children: <Widget>[
               Row(
@@ -130,7 +122,7 @@ class _BodyState extends State<Body> {
                   ),
                   Expanded(
                     child: Text(
-                        "Profile",
+                      "Profile",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: kwhite,
@@ -139,24 +131,25 @@ class _BodyState extends State<Body> {
                       ),
                     ),
                   ),
-                  ],
+                ],
               ),
-                  TextField(
-                        onChanged: (value) {},
-                        cursorColor: kwhite,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          prefixIcon: Icon(Icons.person,),
-                          hintText: "Name",
-                          hintStyle: TextStyle(color: kwhite),
-                      ),
-                    ),
+              TextField(
+                onChanged: (value) {},
+                cursorColor: kwhite,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  prefixIcon: Icon(
+                    Icons.person,
+                  ),
+                  hintText: "Name",
+                  hintStyle: TextStyle(color: kwhite),
+                ),
+              ),
               RoundedButton(
                 text: "Sign up",
                 color: kPrimaryLightColor,
                 textColor: kPrimaryColor,
-                press: () {
-                },
+                press: () {},
               ),
             ],
           ),
@@ -165,5 +158,3 @@ class _BodyState extends State<Body> {
     );
   }
 }
-
-
