@@ -6,7 +6,6 @@ import 'package:healme/components/already_have_an_account_acheck.dart';
 import 'package:healme/components/rounded_button.dart';
 import 'package:healme/components/rounded_input_field.dart';
 import 'package:healme/components/rounded_password_field.dart';
-import 'package:flutter_svg/svg.dart';
 
 class Body extends StatefulWidget {
   const Body({

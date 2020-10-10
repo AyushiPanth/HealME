@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:healme/Screens/Login/login_screen.dart';
@@ -11,8 +9,6 @@ import 'package:healme/components/already_have_an_account_acheck.dart';
 import 'package:healme/components/rounded_button.dart';
 import 'package:healme/components/rounded_input_field.dart';
 import 'package:healme/components/rounded_password_field.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:healme/constants.dart';
 
 class Body extends StatefulWidget {
