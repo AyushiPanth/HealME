@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "69992528118",
+    "firebase_url": "https://healme-7153a.firebaseio.com",
+    "project_id": "healme-7153a",
+    "storage_bucket": "healme-7153a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69992528118:android:e81256f299fd340a74d4d7",
+        "android_client_info": {
+          "package_name": "com.musketeers.HealME"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69992528118-8aa7lsd2tvpll34bsra1hrd9r21chgdi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSvfw3iYy7AOjWYt1WMGc13pTfUpQMR_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "69992528118-8aa7lsd2tvpll34bsra1hrd9r21chgdi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

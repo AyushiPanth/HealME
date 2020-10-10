@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:healme/Screens/authenticate/authenticate.dart';
 import 'package:healme/Screens/welcome/welcome_screen.dart';
+import 'package:healme/Screens/wrapper.dart';
+import 'package:healme/Services/auth.dart';
 import 'package:healme/constants.dart';
+import 'package:healme/models/user.dart';
 import 'package:healme/utilities.dart';
+import 'package:provider/provider.dart';
 
 class OnboardingScreen extends StatefulWidget {
   @override
@@ -17,7 +22,9 @@ class _OnboardingScreen extends State<OnboardingScreen> {
   List<Widget> _buildPageIndicator(height) {
     List<Widget> list = [];
     for (int i = 0; i < _numPages; i++) {
-      list.add(i == _currentPage ? _indicator(true, height) : _indicator(false, height));
+      list.add(i == _currentPage
+          ? _indicator(true, height)
+          : _indicator(false, height));
     }
     return list;
   }
@@ -36,32 +43,32 @@ class _OnboardingScreen extends State<OnboardingScreen> {
   }
 
   @override
-  Widget build (BuildContext context) {
+  Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold (
+    return Scaffold(
       body: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: size.height * 0.03),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget> [
-              Container (
+            children: <Widget>[
+              Container(
                 alignment: Alignment.centerRight,
                 child: FlatButton(
                   onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return WelcomeScreen();
-                          },
-                        ),
-                      );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return WelcomeScreen();
+                        },
+                      ),
+                    );
                   },
                   child: Text(
                     'Skip',
-                    style: TextStyle (
+                    style: TextStyle(
                       color: kPrimaryColor,
                       fontSize: 20.0,
                     ),
@@ -187,18 +194,18 @@ class _OnboardingScreen extends State<OnboardingScreen> {
               ),
               _currentPage != _numPages - 1
                   ? Expanded(
-                child: Align(
-                  alignment: FractionalOffset.bottomRight,
-                  child: FlatButton(
-                    onPressed: () {
-                      _pageController.nextPage(
-                        duration: Duration(milliseconds: 500),
-                        curve: Curves.ease,
-                      );
-                    },
-                  ),
-                ),
-              )
+                      child: Align(
+                        alignment: FractionalOffset.bottomRight,
+                        child: FlatButton(
+                          onPressed: () {
+                            _pageController.nextPage(
+                              duration: Duration(milliseconds: 500),
+                              curve: Curves.ease,
+                            );
+                          },
+                        ),
+                      ),
+                    )
                   : Text(''),
             ],
           ),
@@ -206,35 +213,35 @@ class _OnboardingScreen extends State<OnboardingScreen> {
       ),
       bottomSheet: _currentPage == _numPages - 1
           ? GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return WelcomeScreen();
-                  },
-                ),
-              );
-            },
-            child: Container (
-                  height: size.height * 0.08,
-                  width: double.infinity,
-                  color: kPrimaryColor,
-                  child: Center(
-                      child: Padding(
-                        padding: EdgeInsets.only(bottom: 10.0, top: 10.0),
-                        child: Text(
-                          'Get started',
-                          style: TextStyle(
-                            color: kPrimaryLightColor,
-                            fontSize: 20.0,
-                        ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return Authenticate();
+                    },
+                  ),
+                );
+              },
+              child: Container(
+                height: size.height * 0.08,
+                width: double.infinity,
+                color: kPrimaryColor,
+                child: Center(
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: 10.0, top: 10.0),
+                    child: Text(
+                      'Get started',
+                      style: TextStyle(
+                        color: kPrimaryLightColor,
+                        fontSize: 20.0,
                       ),
                     ),
+                  ),
                 ),
               ),
-          )
-          : Text (''),
+            )
+          : Text(''),
     );
   }
 }

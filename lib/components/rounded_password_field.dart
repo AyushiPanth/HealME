@@ -3,16 +3,19 @@ import 'package:healme/components/text_field_container.dart';
 import 'package:healme/constants.dart';
 
 class RoundedPasswordField extends StatelessWidget {
+  final Function validate;
   final ValueChanged<String> onChanged;
   const RoundedPasswordField({
     Key key,
+    this.validate,
     this.onChanged,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-      child: TextField(
+      child: TextFormField(
+        validator: validate,
         obscureText: true,
         onChanged: onChanged,
         cursorColor: kPrimaryColor,
