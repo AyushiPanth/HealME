@@ -8,6 +8,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.5.0-nullsafety"
+  audioplayer:
+    dependency: "direct main"
+    description:
+      name: audioplayer
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.8.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -275,6 +282,16 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0-nullsafety"
+<<<<<<< HEAD
+=======
+  system_shortcuts:
+    dependency: transitive
+    description:
+      name: system_shortcuts
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
+>>>>>>> ddbac513fc9044ca7aca47cd6e04d54dfedd57d5
   term_glyph:
     dependency: transitive
     description:
@@ -303,6 +320,16 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0-nullsafety.2"
+<<<<<<< HEAD
+=======
+  volume:
+    dependency: "direct main"
+    description:
+      name: volume
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
+>>>>>>> ddbac513fc9044ca7aca47cd6e04d54dfedd57d5
   win32:
     dependency: transitive
     description:
