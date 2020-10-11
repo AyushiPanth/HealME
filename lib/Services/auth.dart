@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:healme/Services/database.dart';
 import 'package:healme/models/user.dart';
 
 class AuthService {
@@ -33,6 +34,10 @@ class AuthService {
       AuthResult result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       FirebaseUser user = result.user;
+
+      // create a new document for the user with the uid
+      await DatabaseService(uid: user.uid).updateUserData('name', 0, 0.0, 0.0);
+      
       return _userFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());

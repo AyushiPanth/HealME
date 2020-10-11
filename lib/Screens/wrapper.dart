@@ -19,7 +19,7 @@ class _WrapperState extends State<Wrapper> {
     if (user == null) {
       return WelcomeScreen();
     } else {
-      return Home();
+      return Main();
     }
   }
 }

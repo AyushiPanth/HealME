@@ -1,28 +1,75 @@
 import 'package:flutter/material.dart';
 import 'package:healme/Services/auth.dart';
 import 'package:healme/constants.dart';
+import 'package:healme/shared/custom_cards.dart';
 
-class Home extends StatefulWidget {
+class Main extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _MainState createState() => _MainState();
 }
 
-class _HomeState extends State<Home> {
-  final AuthService _auth = AuthService();
-
+class _MainState extends State<Main> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: kPrimaryLightColor,
-      appBar: AppBar(
-        title: Text("HealME"),
+    return  Scaffold(
+      appBar: new AppBar(
         backgroundColor: kPrimaryColor,
-        actions: [
-          IconButton(
-              icon: Icon(Icons.exit_to_app),
-              onPressed: () async {
-                await _auth.signOut();
-              })
+        title: new Text(
+          "Calorie Counter",
+          style: TextStyle(
+            color: Colors.white,
+            fontFamily: 'Poppins',
+          ),
+        ),
+      ),
+      backgroundColor: kwhite,
+          body: Column(
+        children: <Widget>[
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              InkWell(
+                onTap: () {},
+                child: Container(
+                    height: 200,
+                    width: MediaQuery.of(context).size.width -
+                        MediaQuery.of(context).size.width * 0.25,
+                    child: customCard(
+                        "", ".", Icons.access_alarm, "assets/images/Healthy")),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              InkWell(
+                onTap: () {},
+                child: Container(
+                    height: 200,
+                    width: MediaQuery.of(context).size.width -
+                        MediaQuery.of(context).size.width * 0.25,
+                    child: customCard(
+                        "", ".", Icons.access_alarm, "assets/images/Meditation")),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              InkWell(
+                onTap: () {},
+                child: Container(
+                    height: 200,
+                    width: MediaQuery.of(context).size.width -
+                        MediaQuery.of(context).size.width * 0.25,
+                    child: customCard(
+                        "", ".", Icons.access_alarm, "assets/images/music")),
+              ),
+            ],
+          ),
         ],
       ),
     );

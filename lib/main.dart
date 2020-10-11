@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Healer',
+      title: 'HealME',
       theme: ThemeData(
         fontFamily: 'Poppins',
         primaryColor: kPrimaryColor,

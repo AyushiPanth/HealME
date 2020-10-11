@@ -38,11 +38,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-<<<<<<< HEAD
         applicationId "com.musketeers.HealME"
-=======
-        applicationId "com.musketeers.healme"
->>>>>>> 64ff681328573747c7885b71b693adc47f3d47d8
         minSdkVersion 21
         targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()

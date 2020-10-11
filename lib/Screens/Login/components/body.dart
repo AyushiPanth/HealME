@@ -6,6 +6,7 @@ import 'package:healme/components/already_have_an_account_acheck.dart';
 import 'package:healme/components/rounded_button.dart';
 import 'package:healme/components/rounded_input_field.dart';
 import 'package:healme/components/rounded_password_field.dart';
+import 'package:healme/shared/loading.dart';
 
 class Body extends StatefulWidget {
   const Body({
@@ -24,71 +25,81 @@ class _BodyState extends State<Body> {
 
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
+  bool loading = false;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Background(
-      child: SingleChildScrollView(
-        child: Form(
-          key: _formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                "Login",
-                style: TextStyle(fontSize: 25, fontFamily: 'Sketch'),
-              ),
-              SizedBox(height: size.height * 0.03),
-              Image.asset(
-                "assets/icons/login.png",
-                height: size.height * 0.45,
-                width: size.width * 0.85,
-              ),
-              SizedBox(height: size.height * 0.03),
-              RoundedInputField(
-                validate: (value) => value.isEmpty ? 'Enter an email' : null,
-                hintText: "Email id",
-                onChanged: (value) {
-                  setState(() => email = value);
-                },
-              ),
-              RoundedPasswordField(
-                validate: (value) =>
-                    value.length < 6 ? 'Enter a password 6+ chars long' : null,
-                onChanged: (value) {
-                  setState(() => password = value);
-                },
-              ),
-              RoundedButton(
-                text: "Login",
-                press: () async {
-                  if (_formKey.currentState.validate()) {
-                    dynamic result = await _auth.signInWithEmailAndPassword(
-                        email, password);
-                    if (result == null) {
-                      setState(() => error = 'Could not sign in with those credentials');
-                    }
-                  }
-                },
-              ),
-              SizedBox(height: size.height * 0.03),
-              AlreadyHaveAnAccountCheck(
-                press: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return SignUpScreen();
+    return loading
+        ? Loading()
+        : Background(
+            child: SingleChildScrollView(
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      "Login",
+                      style: TextStyle(fontSize: 25, fontFamily: 'Sketch'),
+                    ),
+                    SizedBox(height: size.height * 0.03),
+                    Image.asset(
+                      "assets/icons/login.png",
+                      height: size.height * 0.45,
+                      width: size.width * 0.85,
+                    ),
+                    SizedBox(height: size.height * 0.03),
+                    RoundedInputField(
+                      validate: (value) =>
+                          value.isEmpty ? 'Enter an email' : null,
+                      hintText: "Email id",
+                      onChanged: (value) {
+                        setState(() => email = value);
                       },
                     ),
-                  );
-                },
+                    RoundedPasswordField(
+                      validate: (value) => value.length < 6
+                          ? 'Enter a password 6+ chars long'
+                          : null,
+                      onChanged: (value) {
+                        setState(() => password = value);
+                      },
+                    ),
+                    RoundedButton(
+                      text: "Login",
+                      press: () async {
+                        if (_formKey.currentState.validate()) {
+                          setState(() => loading = true);
+                          dynamic result = await _auth
+                              .signInWithEmailAndPassword(email, password);
+                          if (result == null) {
+                            setState(() {
+                              error =
+                                  'Could not sign in with those credentials';
+                              loading = false;
+                            });
+                          }
+                        }
+                      },
+                    ),
+                    SizedBox(height: size.height * 0.03),
+                    AlreadyHaveAnAccountCheck(
+                      press: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return SignUpScreen();
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ),
-            ],
-          ),
-        ),
-      ),
-    );
+            ),
+          );
   }
 }
