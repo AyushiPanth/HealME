@@ -15,7 +15,7 @@ class Music extends StatelessWidget {
       appBar: new AppBar(
         backgroundColor: AppColors.darkBlue,
         title: new Text(
-          "HealMe",
+          "Music Player",
           style: TextStyle(
             color: Colors.white,
             fontFamily: 'Poppins',
