@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:healme/Services/auth.dart';
 import 'package:healme/constants.dart';
 import 'package:healme/shared/custom_cards.dart';
+
+import '../../chumma.dart';
 
 class Main extends StatefulWidget {
   @override
@@ -13,12 +14,33 @@ class _MainState extends State<Main> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: new AppBar(
-        backgroundColor: kPrimaryColor,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.person,
+              color: Colors.white,
+              size: 30,
+            ),
+            onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return MyHome(
+                        index: 3,
+                      );
+                    },
+                  ),
+                );
+            },
+          )
+        ],
+        backgroundColor: Color(0XFF0047b3),
         title: new Text(
-          "Calorie Counter",
+          "HealME",
           style: TextStyle(
             color: Colors.white,
-            fontFamily: 'Poppins',
+            fontFamily: 'S',
           ),
         ),
       ),
@@ -32,7 +54,18 @@ class _MainState extends State<Main> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return MyHome(
+                          index: 0,
+                        );
+                      },
+                    ),
+                  );
+                },
                 child: Container(
                     height: 200,
                     width: MediaQuery.of(context).size.width -
@@ -46,7 +79,18 @@ class _MainState extends State<Main> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return MyHome(
+                          index: 1,
+                        );
+                      },
+                    ),
+                  );
+                },
                 child: Container(
                     height: 200,
                     width: MediaQuery.of(context).size.width -
@@ -60,7 +104,18 @@ class _MainState extends State<Main> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return MyHome(
+                          index: 2,
+                        );
+                      },
+                    ),
+                  );
+                },
                 child: Container(
                     height: 200,
                     width: MediaQuery.of(context).size.width -

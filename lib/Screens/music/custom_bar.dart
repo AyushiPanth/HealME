@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import 'package:healme/constants.dart';
 import 'custom_button.dart';
 
 class CustomProgressWidget extends StatefulWidget {
@@ -38,7 +38,7 @@ class _CustomProgressWidgetState extends State<CustomProgressWidget> {
               child: Icon(
                 Icons.fiber_manual_record,
                 size: 20,
-                color: AppColors.darkBlue,
+                color: kPrimaryColor,
               ),
             ),
           ],
@@ -54,9 +54,9 @@ class _CustomProgressWidgetState extends State<CustomProgressWidget> {
         height: 5,
         width: width,
         decoration: BoxDecoration(
-          color: AppColors.lightBlue,
+          color: kPrimaryLightColor,
           border: Border.all(
-            color: AppColors.styleColor.withAlpha(90),
+            color: kPrimaryColor.withAlpha(90),
             width: .5,
           ),
           borderRadius: BorderRadius.all(
@@ -74,9 +74,9 @@ class _CustomProgressWidgetState extends State<CustomProgressWidget> {
         height: 5,
         width: width,
         decoration: BoxDecoration(
-          color: AppColors.mainColor,
+          color: kPrimaryColor,
           border: Border.all(
-            color: AppColors.styleColor.withAlpha(90),
+            color: kPrimaryColor.withAlpha(90),
             width: .5,
           ),
           borderRadius: BorderRadius.all(
@@ -130,7 +130,7 @@ class CustomSliderThumbRect extends SliderComponentShape {
     );
 
     final paint = Paint()
-      ..color = AppColors.darkBlue //Thumb Background Color
+      ..color = kPrimaryColor //Thumb Background Color
       ..style = PaintingStyle.fill;
 
     canvas.drawRRect(rRect, paint);

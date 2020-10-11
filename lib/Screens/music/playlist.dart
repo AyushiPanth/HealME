@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:audioplayer/audioplayer.dart';
 import 'package:flutter/material.dart';
 import 'package:volume/volume.dart';
-import '../constants.dart';
+import 'package:healme/constants.dart';
 import 'custom_button.dart';
 import 'music_source.dart';
 
@@ -15,11 +15,12 @@ class PlayList1 extends StatefulWidget {
       this.max = 10,
       this.fullWidth = false})
       : super(key: key);
-  final String title;
-  final double sliderHeight;
-  final int min;
-  final int max;
-  final fullWidth;
+
+      final String title;
+      final double sliderHeight;
+      final int min;
+      final int max;
+      final fullWidth;
 
   @override
   _PlayList1State createState() => _PlayList1State();
@@ -28,13 +29,13 @@ class PlayList1 extends StatefulWidget {
 class _PlayList1State extends State<PlayList1> {
   double _value = 0;
   List<Musique> musique_list = [
-    Musique('Heavy Heart', 'Kevin MacLeod', 'assets/1.png',
+    Musique('Heavy Heart', 'Kevin MacLeod', 'assets/images/1.png',
         'https://ia801901.us.archive.org/0/items/kevin-mac-leod-heavy-heart/KevinMacLeod-HeavyHeart.mp3'),
-    Musique('Sleep', 'Scott Buckley', 'assets/1.png',
+    Musique('Sleep', 'Scott Buckley', 'assets/images/1.png',
         'https://ia801404.us.archive.org/7/items/scott-buckley-sleep/ScottBuckley-Sleep.mp3'),
-    Musique('Cherry Picking', 'Erothyme', 'assets/1.png',
+    Musique('Cherry Picking', 'Erothyme', 'assets/images/1.png',
         'https://ia803201.us.archive.org/20/items/erothyme-cherry-picking/Erothyme-CherryPicking.mp3'),
-    Musique('Night', 'Cloudkicker', 'assets/1.png',
+    Musique('Night', 'Cloudkicker', 'assets/images/1.png',
         'https://ia802803.us.archive.org/15/items/cloudkickernight/Cloudkicker_Night.mp3'),
   ];
 
@@ -73,7 +74,7 @@ class _PlayList1State extends State<PlayList1> {
           "HealMe",
           style: TextStyle(
             color: Colors.white,
-            fontFamily: 'S',
+            fontFamily: 'Poppins',
           ),
         ),
       ),
@@ -92,30 +93,12 @@ class _PlayList1State extends State<PlayList1> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  CustomButtonWidget(
-                    size: 50,
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: AppColors.styleColor,
-                    ),
-                  ),
                   Text(
                     'Playing Now',
                     style: TextStyle(
                       fontFamily: 'S',
                       color: AppColors.styleColor,
                       fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  CustomButtonWidget(
-                    size: 50,
-                    onTap: () {},
-                    child: Icon(
-                      Icons.menu,
-                      color: AppColors.styleColor,
                     ),
                   ),
                 ],
@@ -378,13 +361,13 @@ class PlayList2 extends StatefulWidget {
 class _PlayList2State extends State<PlayList2> {
   double _value = 0;
   List<Musique> musique_list = [
-    Musique('Heavy Heart', 'Kevin MacLeod', 'assets/2.png',
+    Musique('Heavy Heart', 'Kevin MacLeod', 'assets/images/2.png',
         'https://ia801901.us.archive.org/0/items/kevin-mac-leod-heavy-heart/KevinMacLeod-HeavyHeart.mp3'),
-    Musique('Sleep', 'Scott Buckley', 'assets/2.png',
+    Musique('Sleep', 'Scott Buckley', 'assets/images/2.png',
         'https://ia801404.us.archive.org/7/items/scott-buckley-sleep/ScottBuckley-Sleep.mp3'),
-    Musique('Cherry Picking', 'Erothyme', 'assets/2.png',
+    Musique('Cherry Picking', 'Erothyme', 'assets/images/2.png',
         'https://ia803201.us.archive.org/20/items/erothyme-cherry-picking/Erothyme-CherryPicking.mp3'),
-    Musique('Night', 'Cloudkicker', 'assets/2.png',
+    Musique('Night', 'Cloudkicker', 'assets/images/2.png',
         'https://ia802803.us.archive.org/15/items/cloudkickernight/Cloudkicker_Night.mp3'),
   ];
 
@@ -442,30 +425,12 @@ class _PlayList2State extends State<PlayList2> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  CustomButtonWidget(
-                    size: 50,
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: AppColors.styleColor,
-                    ),
-                  ),
                   Text(
                     'Playing Now',
                     style: TextStyle(
                       fontFamily: 'S',
                       color: AppColors.styleColor,
                       fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  CustomButtonWidget(
-                    size: 50,
-                    onTap: () {},
-                    child: Icon(
-                      Icons.menu,
-                      color: AppColors.styleColor,
                     ),
                   ),
                 ],
@@ -724,13 +689,13 @@ class PlayList3 extends StatefulWidget {
 class _PlayList3State extends State<PlayList3> {
   double _value = 0;
   List<Musique> musique_list = [
-    Musique('Heavy Heart', 'Kevin MacLeod', 'assets/3.png',
+    Musique('Heavy Heart', 'Kevin MacLeod', 'assets/images/3.png',
         'https://ia801901.us.archive.org/0/items/kevin-mac-leod-heavy-heart/KevinMacLeod-HeavyHeart.mp3'),
-    Musique('Sleep', 'Scott Buckley', 'assets/3.png',
+    Musique('Sleep', 'Scott Buckley', 'assets/images/3.png',
         'https://ia801404.us.archive.org/7/items/scott-buckley-sleep/ScottBuckley-Sleep.mp3'),
-    Musique('Cherry Picking', 'Erothyme', 'assets/3.png',
+    Musique('Cherry Picking', 'Erothyme', 'assets/images/3.png',
         'https://ia803201.us.archive.org/20/items/erothyme-cherry-picking/Erothyme-CherryPicking.mp3'),
-    Musique('Night', 'Cloudkicker', 'assets/3.png',
+    Musique('Night', 'Cloudkicker', 'assets/images/3.png',
         'https://ia802803.us.archive.org/15/items/cloudkickernight/Cloudkicker_Night.mp3'),
   ];
 
@@ -788,30 +753,12 @@ class _PlayList3State extends State<PlayList3> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  CustomButtonWidget(
-                    size: 50,
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: AppColors.styleColor,
-                    ),
-                  ),
                   Text(
                     'Playing Now',
                     style: TextStyle(
                       fontFamily: 'S',
                       color: AppColors.styleColor,
                       fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  CustomButtonWidget(
-                    size: 50,
-                    onTap: () {},
-                    child: Icon(
-                      Icons.menu,
-                      color: AppColors.styleColor,
                     ),
                   ),
                 ],
@@ -1074,13 +1021,13 @@ class PlayList4 extends StatefulWidget {
 class _PlayList4State extends State<PlayList4> {
   double _value = 0;
   List<Musique> musique_list = [
-    Musique('Heavy Heart', 'Kevin MacLeod', 'assets/4.png',
+    Musique('Heavy Heart', 'Kevin MacLeod', 'assets/images/4.png',
         'https://ia801901.us.archive.org/0/items/kevin-mac-leod-heavy-heart/KevinMacLeod-HeavyHeart.mp3'),
-    Musique('Sleep', 'Scott Buckley', 'assets/4.png',
+    Musique('Sleep', 'Scott Buckley', 'assets/images/4.png',
         'https://ia801404.us.archive.org/7/items/scott-buckley-sleep/ScottBuckley-Sleep.mp3'),
-    Musique('Cherry Picking', 'Erothyme', 'assets/4.png',
+    Musique('Cherry Picking', 'Erothyme', 'assets/images/4.png',
         'https://ia803201.us.archive.org/20/items/erothyme-cherry-picking/Erothyme-CherryPicking.mp3'),
-    Musique('Night', 'Cloudkicker', 'assets/4.png',
+    Musique('Night', 'Cloudkicker', 'assets/images/4.png',
         'https://ia802803.us.archive.org/15/items/cloudkickernight/Cloudkicker_Night.mp3'),
   ];
 
@@ -1138,30 +1085,12 @@ class _PlayList4State extends State<PlayList4> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  CustomButtonWidget(
-                    size: 50,
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: AppColors.styleColor,
-                    ),
-                  ),
                   Text(
                     'Playing Now',
                     style: TextStyle(
                       fontFamily: 'S',
                       color: AppColors.styleColor,
                       fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  CustomButtonWidget(
-                    size: 50,
-                    onTap: () {},
-                    child: Icon(
-                      Icons.menu,
-                      color: AppColors.styleColor,
                     ),
                   ),
                 ],
@@ -1420,13 +1349,13 @@ class PlayList5 extends StatefulWidget {
 class _PlayList5State extends State<PlayList5> {
   double _value = 0;
   List<Musique> musique_list = [
-    Musique('Heavy Heart', 'Kevin MacLeod', 'assets/5.png',
+    Musique('Heavy Heart', 'Kevin MacLeod', 'assets/images/5.png',
         'https://ia801901.us.archive.org/0/items/kevin-mac-leod-heavy-heart/KevinMacLeod-HeavyHeart.mp3'),
-    Musique('Sleep', 'Scott Buckley', 'assets/5.png',
+    Musique('Sleep', 'Scott Buckley', 'assets/images/5.png',
         'https://ia801404.us.archive.org/7/items/scott-buckley-sleep/ScottBuckley-Sleep.mp3'),
-    Musique('Cherry Picking', 'Erothyme', 'assets/5.png',
+    Musique('Cherry Picking', 'Erothyme', 'assets/images/5.png',
         'https://ia803201.us.archive.org/20/items/erothyme-cherry-picking/Erothyme-CherryPicking.mp3'),
-    Musique('Night', 'Cloudkicker', 'assets/5.png',
+    Musique('Night', 'Cloudkicker', 'assets/images/5.png',
         'https://ia802803.us.archive.org/15/items/cloudkickernight/Cloudkicker_Night.mp3'),
   ];
 
@@ -1484,30 +1413,12 @@ class _PlayList5State extends State<PlayList5> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  CustomButtonWidget(
-                    size: 50,
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: AppColors.styleColor,
-                    ),
-                  ),
                   Text(
                     'Playing Now',
                     style: TextStyle(
                       fontFamily: 'S',
                       color: AppColors.styleColor,
                       fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  CustomButtonWidget(
-                    size: 50,
-                    onTap: () {},
-                    child: Icon(
-                      Icons.menu,
-                      color: AppColors.styleColor,
                     ),
                   ),
                 ],
