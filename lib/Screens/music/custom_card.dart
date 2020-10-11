@@ -8,6 +8,17 @@ Widget customCard(String title, String spots, icon, String img) {
     margin: EdgeInsets.all(10.0),
     child: Container(
       decoration: BoxDecoration(
+        boxShadow: [ //background color of box
+          BoxShadow(
+            color: Colors.black,
+            blurRadius: 3.0, // soften the shadow
+            spreadRadius: 0.6, //extend the shadow
+            offset: Offset(
+              1.0, // Move to right 10  horizontally
+              1.0, // Move to bottom 10 Vertically
+            ),
+          )
+        ],
         border: Border.all(color: Colors.blueAccent, width: 3),
         borderRadius: BorderRadius.circular(10),
         image: DecorationImage(

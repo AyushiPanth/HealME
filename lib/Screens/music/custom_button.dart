@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../constants.dart';
+import 'package:healme/constants.dart';
 
 class CustomButtonWidget extends StatelessWidget {
   final double size;
