@@ -11,7 +11,7 @@ class Poses extends StatelessWidget {
       appBar: new AppBar(
         backgroundColor: AppColors.darkBlue,
         title: new Text(
-          "HealMe",
+          "Yoga Asanas",
           style: TextStyle(
             color: Colors.white,
             fontFamily: 'Poppins',
@@ -35,7 +35,7 @@ class Poses extends StatelessWidget {
                         }
                       },
                       child: Container(
-                          height: 180,
+                          height:  MediaQuery.of(context).size.width * .5,
                           width: MediaQuery.of(context).size.width * .5,
                           child: poseCard("", "", Icons.accessibility, "yoga1")),
                     ),
@@ -48,7 +48,7 @@ class Poses extends StatelessWidget {
                         }
                       },
                       child: Container(
-                        height: 180,
+                        height: MediaQuery.of(context).size.width * .5,
                         width: MediaQuery.of(context).size.width * .5,
                         child:
                         poseCard("", "", Icons.bluetooth_searching, "yoga2"),
@@ -67,7 +67,7 @@ class Poses extends StatelessWidget {
                         }
                       },
                       child: Container(
-                          height: 180,
+                          height: MediaQuery.of(context).size.width * .5,
                           width: MediaQuery.of(context).size.width * .5,
                           child: poseCard("", "", Icons.attach_money, "yoga3")),
                     ),
@@ -80,7 +80,7 @@ class Poses extends StatelessWidget {
                         }
                       },
                       child: Container(
-                          height: 180,
+                          height: MediaQuery.of(context).size.width * .5,
                           width: MediaQuery.of(context).size.width * .5,
                           child: poseCard("", "", Icons.brightness_5, "yoga4")),
                     ),
@@ -102,7 +102,7 @@ class Poses extends StatelessWidget {
                         }
                       },
                       child: Container(
-                          height: 180,
+                          height: MediaQuery.of(context).size.width * .5,
                           width: MediaQuery.of(context).size.width * .5,
                           child: poseCard("", "", Icons.accessibility, "yoga5")),
                     ),
@@ -115,7 +115,7 @@ class Poses extends StatelessWidget {
                         }
                       },
                       child: Container(
-                        height: 180,
+                        height: MediaQuery.of(context).size.width * .5,
                         width: MediaQuery.of(context).size.width * .5,
                         child:
                         poseCard("", "", Icons.bluetooth_searching, "yoga6"),
@@ -134,7 +134,7 @@ class Poses extends StatelessWidget {
                         }
                       },
                       child: Container(
-                          height: 180,
+                          height: MediaQuery.of(context).size.width * .5,
                           width: MediaQuery.of(context).size.width * .5,
                           child: poseCard("", "", Icons.attach_money, "yoga7")),
                     ),
@@ -147,7 +147,7 @@ class Poses extends StatelessWidget {
                         }
                       },
                       child: Container(
-                          height: 180,
+                          height: MediaQuery.of(context).size.width * 0.5,
                           width: MediaQuery.of(context).size.width * .5,
                           child: poseCard("", "", Icons.brightness_5, "yoga8")),
                     ),
@@ -169,7 +169,7 @@ class Poses extends StatelessWidget {
                         }
                       },
                       child: Container(
-                          height: 180,
+                          height: MediaQuery.of(context).size.width * .5,
                           width: MediaQuery.of(context).size.width * .5,
                           child: poseCard("", "", Icons.accessibility, "yoga9")),
                     ),
@@ -182,7 +182,7 @@ class Poses extends StatelessWidget {
                         }
                       },
                       child: Container(
-                        height: 180,
+                        height: MediaQuery.of(context).size.width * .5,
                         width: MediaQuery.of(context).size.width * .5,
                         child:
                         poseCard("", "", Icons.bluetooth_searching, "yoga10"),
@@ -201,7 +201,7 @@ class Poses extends StatelessWidget {
                         }
                       },
                       child: Container(
-                          height: 180,
+                          height: MediaQuery.of(context).size.width * .5,
                           width: MediaQuery.of(context).size.width * .5,
                           child: poseCard("", "", Icons.attach_money, "yoga11")),
                     ),
@@ -214,7 +214,7 @@ class Poses extends StatelessWidget {
                         }
                       },
                       child: Container(
-                          height: 180,
+                          height: MediaQuery.of(context).size.width * .5,
                           width: MediaQuery.of(context).size.width * .5,
                           child: poseCard("", "", Icons.brightness_5, "yoga12")),
                     ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:healme/Screens/profile/profile.dart';
+import 'package:healme/models/user.dart';
+import 'package:provider/provider.dart';
 import 'Screens/Calorie/calorie-counter.dart';
 import 'Screens/music/music_menu.dart';
 import 'Screens/yoga/poses.dart';
@@ -8,7 +10,6 @@ import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class MyHome extends StatelessWidget {
   final int index;
-
   const MyHome({
     Key key,
     this.index,
@@ -65,13 +66,13 @@ List<Widget> _buildScreens() {
 List<PersistentBottomNavBarItem> _navBarsItems() {
   return [
     PersistentBottomNavBarItem(
-      icon: Icon(Icons.home),
+      icon: Icon(Icons.local_fire_department),
       title: ("Calorie counter"),
       activeColor: kwhite,
       inactiveColor: kPrimaryLightColor,
     ),
     PersistentBottomNavBarItem(
-      icon: Icon(Icons.home),
+      icon: Icon(Icons.self_improvement),
       title: ("Yoga"),
       activeColor: kwhite,
       inactiveColor: kPrimaryLightColor,
@@ -83,7 +84,7 @@ List<PersistentBottomNavBarItem> _navBarsItems() {
       inactiveColor: kPrimaryLightColor,
     ),
     PersistentBottomNavBarItem(
-      icon: Icon(Icons.person_outline),
+      icon: Icon(Icons.account_circle),
       title: ("Profile"),
       activeColor: kwhite,
       inactiveColor: kPrimaryLightColor,

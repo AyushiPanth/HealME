@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:healme/models/info.dart';
+import 'package:healme/models/user.dart';
 
 class DatabaseService {
   final String uid;
@@ -30,8 +31,24 @@ class DatabaseService {
     }).toList();
   }
 
-  //get user info stream
+  // user data from snapshot
+  UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
+    return UserData(
+      uid: uid,
+      name: snapshot.data['name'],
+      age: snapshot.data['age'],
+      weight: snapshot.data['weight'],
+      height: snapshot.data['height'],
+    );
+  }
+
+  // get user info stream
   Stream<List<UserInfo>> get info {
     return userInfo.snapshots().map(_userInfoListFromSnapshot);
+  }
+
+  // get user doc stream
+  Stream<UserData> get userData {
+    return userInfo.document(uid).snapshots().map(_userDataFromSnapshot);
   }
 }

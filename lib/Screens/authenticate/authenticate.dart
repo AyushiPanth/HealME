@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:healme/Screens/Login/login_screen.dart';
 import 'package:healme/Screens/wrapper.dart';
 import 'package:healme/Services/auth.dart';
 import 'package:healme/models/user.dart';
@@ -13,7 +12,10 @@ class Authenticate extends StatefulWidget {
 class _AuthenticateState extends State<Authenticate> {
   @override
   Widget build(BuildContext context) {
+    
     return StreamProvider<User>.value(
-        value: AuthService().user, child: Wrapper());
+        value: AuthService().user, 
+        child: Wrapper()
+    );
   }
 }

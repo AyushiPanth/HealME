@@ -70,8 +70,8 @@ class _PlayList1State extends State<PlayList1> {
       backgroundColor: Colors.white,
       appBar: new AppBar(
         backgroundColor: AppColors.darkBlue,
-        title: new Text(
-          "HealMe",
+        title: Text(
+          "Music Player",
           style: TextStyle(
             color: Colors.white,
             fontFamily: 'Poppins',
