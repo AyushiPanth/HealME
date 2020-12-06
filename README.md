@@ -1,4 +1,10 @@
 # HealME
+
+
+
+### Visitor Count
+![Visitor Count](https://profile-counter.glitch.me/AyushiPanth/count.svg)
+
 ## Problem Statement
 There is no one-stop mobile application to take care of our Mental as well as our Physical Health.
 ## Description
